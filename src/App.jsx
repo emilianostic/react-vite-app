@@ -1,4 +1,4 @@
-import Tasklist from "./TaskList";
+import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import {tasks as data} from './Tasks'
 import {useState, useEffect} from 'react'
@@ -11,11 +11,17 @@ function App() {
   }
 , [])
 
-
+function createTask(taskTitle){
+setTasks([...tasks, {
+title: taskTitle,
+id: tasks.length,
+description: "nueva Tarea"
+}])
+}
   return (
     <>
-      <TaskForm />
-      <Tasklist tasks={tasks} />
+      <TaskForm createTask={createTask} />
+      <TaskList tasks={tasks} />
     </>
   );
 }

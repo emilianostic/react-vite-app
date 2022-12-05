@@ -1,14 +1,15 @@
 import { useState } from "react";
-function TaskForm() {
+
+function TaskForm({createTask}) {
   const [title, setTitle] = useState("");
   /*  Esto de arriba es const title = "" */
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title)
+  createTask(title)
   }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         placeholder="Escribe tu tarea"
         onChange={(e) => setTitle(e.target.value)}
