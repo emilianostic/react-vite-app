@@ -15,7 +15,7 @@ function createTask(taskTitle){
 setTasks([...tasks, {
 title: taskTitle,
 id: tasks.length,
-description: "nueva Tarea"
+description: "Nueva Tarea"
 }])
 }
   return (
